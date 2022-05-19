@@ -392,7 +392,7 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
                     'wandb_id': loggers.wandb.wandb_run.id if loggers.wandb else None,
                     'date': datetime.now().isoformat()}
 
-                isim = 'last_%s.pt'%say
+                isim = 'epoch_%spart_%s.pt'%epoch%say
                 torch.save(ckpt, w / isim)
                 e_zaman = time.time()
                 say = say + 1
